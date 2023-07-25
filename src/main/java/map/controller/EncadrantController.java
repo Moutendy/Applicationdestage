@@ -14,22 +14,19 @@ public class EncadrantController {
     public EncadrantController(EncadrantService encadrantService) {
         this.encadrantService=encadrantService;
     }
-
-    @GetMapping(value="showencadrant",consumes = "application/json")
+    @GetMapping(value="showencadrant",produces = "application/json")
     List<EncadrantDto> showEncadrant() {
        return encadrantService.showEncadrantCollection();
     }
-    @GetMapping(value="showbydordencadrant",consumes = "application/json")
+    @GetMapping(value="showbydordencadrant",produces = "application/json")
     List<EncadrantDto> showEncadrantByOrder() {
         return encadrantService.showByOrderEncadrantCollection();
     }
-
-
-    @PutMapping(value="updateencadrant/{id}" ,consumes = "application/json")
-    void updateEncadrant(@RequestBody EncadrantDto encadrantDto,@PathVariable("id") Long id) {
-        encadrantService.updateEncadrant(encadrantDto,id);
+    @PutMapping(value="updateencadrant" ,consumes = "application/json")
+    void updateEncadrant(@RequestBody EncadrantDto encadrantDto) {
+        encadrantService.updateEncadrant(encadrantDto);
     }
-    @PostMapping(value="postencadrant/{id}" ,consumes = "application/json")
+    @PostMapping(value="postencadrant" ,consumes = "application/json")
     void postEncadrant(@RequestBody EncadrantDto encadrantDto) {
         encadrantService.addEncadrant(encadrantDto);
     }

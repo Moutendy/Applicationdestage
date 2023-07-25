@@ -13,7 +13,10 @@ public class EncadrantDto implements Comparable<EncadrantDto>{
     private Long id ;
     private String name;
     private String profil;
+    private String email;
     private Long experience;
+
+    private String password;
 
     @Override
     public int compareTo(EncadrantDto encadrantDto) {

@@ -45,9 +45,9 @@ public class EncadrantServiceImp implements EncadrantService {
     }
 
     @Override
-    public void updateEncadrant(EncadrantDto encadrantDto, long id) {
-        if(encadrantRepository.existsById(id)) {
+    public void updateEncadrant(EncadrantDto encadrantDto) {
+
             encadrantRepository.save(encadrantMapper.encadrantdtoToModel(encadrantDto));
-        }
+
     }
 }

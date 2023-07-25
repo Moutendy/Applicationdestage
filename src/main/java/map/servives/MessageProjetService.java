@@ -11,5 +11,5 @@ public interface MessageProjetService {
     List<MessageProjetDto> showMessageProjetCollection();
     List<MessageProjetDto> showByOrderMessageProjetCollection();
     void deleteEncadrant(Long id);
-    void updateMessageProjet(MessageProjetDto messageProjetDto,long id);
+    void updateMessageProjet(MessageProjetDto messageProjetDto);
 }

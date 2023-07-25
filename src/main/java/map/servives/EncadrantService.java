@@ -11,5 +11,5 @@ public interface EncadrantService {
     List<EncadrantDto> showEncadrantCollection();
     List<EncadrantDto> showByOrderEncadrantCollection();
     void deleteEncadrant(Long id);
-    void updateEncadrant(EncadrantDto encadrantDto,long id);
+    void updateEncadrant(EncadrantDto encadrantDto);
 }

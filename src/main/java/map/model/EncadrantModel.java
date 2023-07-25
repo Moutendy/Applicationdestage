@@ -23,4 +23,9 @@ public class EncadrantModel {
     private String profil;
     @Column(name="experience")
     private Long experience;
+    @Column(name="email",nullable = false, updatable = false)
+    private String email;
+
+    @Column(name="password",nullable = false, updatable = false)
+    private String password;
 }

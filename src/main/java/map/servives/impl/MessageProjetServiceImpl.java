@@ -22,28 +22,22 @@ public class MessageProjetServiceImpl implements MessageProjetService {
     public void addMessageProjet(MessageProjetDto messageProjetDto) {
         messageProjetRepository.save(messageMapping.messageProjetdtoToModel(messageProjetDto));
     }
-
     @Override
     public List<MessageProjetDto> showMessageProjetCollection() {
         return messageMapping.listtoMessageProjetDto(messageProjetRepository.findAll());
     }
-
     @Override
     public List<MessageProjetDto> showByOrderMessageProjetCollection() {
        List<MessageProjetDto> messageProjetDtos=messageMapping.listtoMessageProjetDto(messageProjetRepository.findAll());
         Collections.sort(messageProjetDtos);
        return messageProjetDtos;
     }
-
     @Override
     public void deleteEncadrant(Long id) {
-       if(messageProjetRepository.existsById(id))
           messageProjetRepository.deleteById(id);
     }
-
     @Override
-    public void updateMessageProjet(MessageProjetDto messageProjetDto, long id) {
-        if(messageProjetRepository.existsById(id))
+    public void updateMessageProjet(MessageProjetDto messageProjetDto) {
             messageProjetRepository.save(messageMapping.messageProjetdtoToModel(messageProjetDto));
     }
 }
