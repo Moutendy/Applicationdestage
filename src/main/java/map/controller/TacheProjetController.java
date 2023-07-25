@@ -19,9 +19,9 @@ public class TacheProjetController {
     void addTache(@RequestBody TacheProjetDto tacheProjetDto){
         tacheProjetService.addTacheProjet(tacheProjetDto);
     }
-     @PutMapping(value = "updatetache/{id}",produces = "application/json")
-    void updateTache(@RequestBody TacheProjetDto tacheProjetDto,@PathVariable("id")Long id){
-         tacheProjetService.updateTacheProjet(tacheProjetDto,id);
+     @PutMapping(value = "updatetache",produces = "application/json")
+    void updateTache(@RequestBody TacheProjetDto tacheProjetDto){
+         tacheProjetService.updateTacheProjet(tacheProjetDto);
     }
     @DeleteMapping(value="delete/{id}",produces = "application/json")
     void deleteProjet(@PathVariable("id")Long id){

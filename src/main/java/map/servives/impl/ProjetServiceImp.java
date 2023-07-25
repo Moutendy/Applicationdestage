@@ -37,9 +37,7 @@ public class ProjetServiceImp implements ProjetService {
         }
     }
     @Override
-    public void updateProjet(ProjetDto projet, long id) {
-        if(projetRepository.existsById(id)) {
-            projetRepository.save(projetMapper.DtoToModel(projet));
-        }
+    public void updateProjet(ProjetDto projet) {
+        projetRepository.save(projetMapper.DtoToModel(projet));
     }
 }

@@ -12,5 +12,5 @@ public interface TacheProjetService {
     List<TacheProjetDto> showTacheProjetCollection();
     List<TacheProjetDto> showByOrderTacheProjetCollection();
     void deleteTacheProjet(Long id);
-    void updateTacheProjet(TacheProjetDto tacheProjetDto,long id);
+    void updateTacheProjet(TacheProjetDto tacheProjetDto);
 }

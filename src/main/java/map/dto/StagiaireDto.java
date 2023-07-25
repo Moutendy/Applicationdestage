@@ -18,6 +18,10 @@ public class StagiaireDto implements Comparable<StagiaireDto>{
 	
 	private ProjetDto projet;
 
+	private String email;
+
+	private String password;
+
 	private EncadrantDto encadrant;
 	@Override
 	public int compareTo(StagiaireDto stagiaire) {

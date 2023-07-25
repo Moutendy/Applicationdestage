@@ -41,8 +41,8 @@ public class TacheProjetServiceImpl implements TacheProjetService {
     }
 
     @Override
-    public void updateTacheProjet(TacheProjetDto tacheProjetDto, long id) {
-        if(tacheProjetRespository.existsById(id))
+    public void updateTacheProjet(TacheProjetDto tacheProjetDto) {
+
             tacheProjetRespository.save(tacheProjetMapping.tacheProjetdtoToModel(tacheProjetDto));
     }
 }

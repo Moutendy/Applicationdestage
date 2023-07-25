@@ -27,5 +27,11 @@ public class StagiaireModel {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "encadrant", nullable = false,updatable = false)
 	private EncadrantModel encadrant;
+
+	@Column(name="email",nullable = false, updatable = false)
+	private String email;
+
+	@Column(name="password",nullable = false, updatable = false)
+	private String password;
 	
 }

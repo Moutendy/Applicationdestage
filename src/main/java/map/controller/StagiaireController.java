@@ -2,11 +2,7 @@ package map.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import map.dto.StagiaireDto;
 import map.servives.StagiaireServiceI;
@@ -23,9 +19,13 @@ public class StagiaireController {
 	}
 	
 	 @PostMapping(value = "/addstagiaire",produces = "application/json")
-	public void addListStagiaire(@RequestBody List<StagiaireDto> listStagiaire)
-	{
+	public void addListStagiaire(@RequestBody List<StagiaireDto> listStagiaire) {
 		 stagiaireServiceI.addStagiaireCollection(listStagiaire);
+	}
+	@PutMapping(value = "/addstagiaire",produces = "application/json")
+	public void updateListStagiaire(@RequestBody List<StagiaireDto> listStagiaire) {
+		stagiaireServiceI.addStagiaireCollection(listStagiaire);
+		stagiaireServiceI.updateStagiaire(listStagiaire);
 	}
 	 
 	 @GetMapping(value="/showstagiaire",produces = "application/json")

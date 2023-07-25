@@ -50,15 +50,7 @@ public class StagiaireServiceImpl implements StagiaireServiceI{
 		stagiaireRepository.deleteAllById(id);
 	}
 	@Override
-	public void updateStagiaire(List<StagiaireDto> listStagiaire,List<Long> id) {
-		Map<Long,StagiaireDto> stagiaireDtoMap = new HashMap<Long,StagiaireDto>();
-		for(Long idstagiaire:id) {
-			if(stagiaireRepository.existsById(idstagiaire)) {
-				for(StagiaireDto stagiaireDto:listStagiaire) {
-					stagiaireDtoMap.put(idstagiaire,stagiaireDto);
-				}
-			}
-		}
-		stagiaireRepository.saveAll(stagiaireMapper.listStagiaireModel((List<StagiaireDto>) stagiaireDtoMap));
+	public void updateStagiaire(List<StagiaireDto> listStagiaire) {
+		stagiaireRepository.saveAll(stagiaireMapper.listStagiaireModel(listStagiaire));
 	}
 }
