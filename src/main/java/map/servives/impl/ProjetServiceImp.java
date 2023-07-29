@@ -40,4 +40,12 @@ public class ProjetServiceImp implements ProjetService {
     public void updateProjet(ProjetDto projet) {
         projetRepository.save(projetMapper.DtoToModel(projet));
     }
+    @Override
+    public List<ProjetDto> traineeProjectForSupervisor(Long id) {
+        return projetMapper.listtoProjetDto(projetRepository.traineeProjectForSupervisor(id));
+    }
+    @Override
+    public List<ProjetDto> internProject(Long id) {
+        return projetMapper.listtoProjetDto(projetRepository.internProject(id));
+    }
 }

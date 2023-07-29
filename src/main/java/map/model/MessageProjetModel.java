@@ -22,6 +22,8 @@ public class MessageProjetModel {
     private String issue;
     @Column(name="recipient")
     private String recipient;
+    @Column(name="message")
+    private String message;
     @Column(name="dateMessenger")
     private Date  dateMessenger;
     @ManyToOne(fetch = FetchType.EAGER)

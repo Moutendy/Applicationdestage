@@ -17,6 +17,7 @@ public class MessageProjetDto implements Comparable<MessageProjetDto>{
     private String recipient;
     private ProjetDto projet;
     private Date  dateMessenger;
+    private String message;
     @Override
     public int compareTo(MessageProjetDto messageProjetDto) {
         if (!this.dateMessenger.equals(messageProjetDto.getDateMessenger()))

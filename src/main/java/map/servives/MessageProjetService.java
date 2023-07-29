@@ -12,4 +12,7 @@ public interface MessageProjetService {
     List<MessageProjetDto> showByOrderMessageProjetCollection();
     void deleteEncadrant(Long id);
     void updateMessageProjet(MessageProjetDto messageProjetDto);
+
+    List<MessageProjetDto> listMessageReceivedBySupervisor(String email);
+    List<MessageProjetDto> messageReceivedInbox(String email,String emailstagiare);
 }

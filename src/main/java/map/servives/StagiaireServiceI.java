@@ -17,4 +17,6 @@ public interface StagiaireServiceI {
 	void deleteStagiaire(List<Long> id);
 
 	void updateStagiaire(List<StagiaireDto> listStagiaire);
+
+	List<StagiaireDto> listOfTrainees(Long id);
 }

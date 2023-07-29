@@ -40,4 +40,14 @@ public class MessageProjetServiceImpl implements MessageProjetService {
     public void updateMessageProjet(MessageProjetDto messageProjetDto) {
             messageProjetRepository.save(messageMapping.messageProjetdtoToModel(messageProjetDto));
     }
+
+    @Override
+    public List<MessageProjetDto> listMessageReceivedBySupervisor(String email) {
+        return messageMapping.listtoMessageProjetDto(messageProjetRepository.listMessageReceivedBySupervisor(email));
+    }
+
+    @Override
+    public List<MessageProjetDto> messageReceivedInbox(String email, String emailstagiare) {
+        return messageMapping.listtoMessageProjetDto(messageProjetRepository.messageReceivedInbox(email,emailstagiare));
+    }
 }

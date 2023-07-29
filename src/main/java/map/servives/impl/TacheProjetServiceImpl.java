@@ -45,4 +45,14 @@ public class TacheProjetServiceImpl implements TacheProjetService {
 
             tacheProjetRespository.save(tacheProjetMapping.tacheProjetdtoToModel(tacheProjetDto));
     }
+
+    @Override
+    public List<TacheProjetDto> internProjectTask(Long id) {
+        return tacheProjetMapping.listtoTacheProjetDto(tacheProjetRespository.internProjectTask(id));
+    }
+
+    @Override
+    public List<TacheProjetDto> traineeSpot(Long id) {
+        return tacheProjetMapping.listtoTacheProjetDto(tacheProjetRespository.traineeSpot(id));
+    }
 }

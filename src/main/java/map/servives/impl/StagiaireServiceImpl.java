@@ -53,4 +53,9 @@ public class StagiaireServiceImpl implements StagiaireServiceI{
 	public void updateStagiaire(List<StagiaireDto> listStagiaire) {
 		stagiaireRepository.saveAll(stagiaireMapper.listStagiaireModel(listStagiaire));
 	}
+
+	@Override
+	public List<StagiaireDto> listOfTrainees(Long id) {
+		return stagiaireMapper.listtoStagiaireDto(stagiaireRepository.listOfTrainees(id));
+	}
 }

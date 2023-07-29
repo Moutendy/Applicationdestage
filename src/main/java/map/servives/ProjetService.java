@@ -12,4 +12,8 @@ public interface ProjetService {
     List<ProjetDto> showByOrderProjetCollection();
     void deleteProjet(Long id);
     void updateProjet(ProjetDto projet);
+
+    List<ProjetDto> traineeProjectForSupervisor(Long id);
+
+    List<ProjetDto> internProject(Long id);
 }
