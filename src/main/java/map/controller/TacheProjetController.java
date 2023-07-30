@@ -3,6 +3,7 @@ package map.controller;
 import map.dto.ProjetDto;
 import map.dto.TacheProjetDto;
 import map.servives.TacheProjetService;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,4 +38,18 @@ public class TacheProjetController {
    {
        return tacheProjetService.showByOrderTacheProjetCollection();
    }
+
+    @GetMapping(value = "internprojecttask/{id}",consumes = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.MULTIPART_FORM_DATA_VALUE }, produces = MediaType.APPLICATION_JSON_VALUE)
+    List<TacheProjetDto>internProjectTask(@PathVariable("id")Long id)
+    {
+        return tacheProjetService.internProjectTask(id);
+    }
+
+    @GetMapping(value = "traineeSpot/{id}",consumes = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.MULTIPART_FORM_DATA_VALUE }, produces = MediaType.APPLICATION_JSON_VALUE)
+    List<TacheProjetDto>traineeSpot(@PathVariable("id")Long id)
+    {
+        return tacheProjetService.traineeSpot(id);
+    }
 }

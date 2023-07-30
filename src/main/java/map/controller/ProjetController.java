@@ -58,4 +58,18 @@ public class ProjetController {
     public void uploadFile(@RequestParam("file") MultipartFile file) {
          fileService.uploadFile(file);
     }
+
+    @GetMapping(value = "stagiaireofencadrant/{id}",consumes = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.MULTIPART_FORM_DATA_VALUE }, produces = MediaType.APPLICATION_JSON_VALUE)
+    List<ProjetDto> traineeProjectForSupervisor(@PathVariable("id") Long id)
+    {
+        return projetService.traineeProjectForSupervisor(id);
+    }
+
+    @GetMapping(value = "projetstagiaire/{id}",consumes = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.MULTIPART_FORM_DATA_VALUE }, produces = MediaType.APPLICATION_JSON_VALUE)
+    List<ProjetDto> internProject(@PathVariable("id") Long id)
+    {
+        return projetService.internProject(id);
+    }
 }

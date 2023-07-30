@@ -2,6 +2,7 @@ package map.controller;
 
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import map.dto.StagiaireDto;
@@ -39,5 +40,10 @@ public class StagiaireController {
 	{
 		return stagiaireServiceI.showByOrderStagiaireCollection();
 	}
-
+    @GetMapping(value = "showstagiairebyorder/{id}",consumes = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.MULTIPART_FORM_DATA_VALUE }, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<StagiaireDto> listOfTrainees(@PathVariable("id")Long id)
+	{
+		return stagiaireServiceI.listOfTrainees(id);
+	}
 }

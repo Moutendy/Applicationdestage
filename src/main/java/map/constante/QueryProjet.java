@@ -6,17 +6,20 @@ public class QueryProjet {
                                               "join stagiaire as st on st.projet = p.id" +
                                                "join tache ta st on ta.projet = p.id" +
                                                " where st.id =:id";
-    public static final String projet_stagiaire="select p.* from encadrant e join projet as p on e.id = p.idencadrant " +
-            "join stagiaire as st on st.encadrant = e.id " +
+    //le projet d'un stagiaires
+    public static final String projet_stagiaire="select p.* from stagiaire st join projet as p on p.id = st.projet " +
+            "join encadrant as e on st.encadrant = e.id " +
             "where st.id =:id";
 
     /*les requetes pour afficher les informations sur les stagiares coté encadrant*/
     public static final String list_stagiaire="select st.* from encadrant e join projet as p on e.id = p.idencadrant " +
-            "join stagiaire as st on st.encadrant = e.id and st.projet=p.id" +
+            "join stagiaire as st on st.encadrant = e.id and st.projet=p.id " +
             "where e.id =:id";
+
+    //les stagiaires d'un encadrant
     public static final String projet_stagiaire_for_encadrant="select p.* from encadrant e join projet as p on e.id = p.idencadrant " +
-            "join stagiaire as st on st.encadrant = e.id and st.projet=p.id" +
-            "where st.id =:id";
+            "join stagiaire as st on st.encadrant = e.id and st.projet=p.id " +
+            "where e.id =:id";
     public static final String tache_projet_for_stagiaire="select * from encadrant e join projet as p on e.id = p.idencadrant " +
             "join stagiaire as st on st.encadrant = e.id" +
             " and st.projet=p.id " +
